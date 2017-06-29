@@ -9,8 +9,11 @@ const initialState = {
 }
 
 export default function newsList (state = initialState, action) {
+	console.log(action)
 	switch (action.type) {
-		case 'RECEIVE_LIST_DATA':
+		case 'RECEIVE_LIST_IDS':
 			return Object.assign({}, state, { items: action.ids })
+		default:
+			return state
 	}
 }

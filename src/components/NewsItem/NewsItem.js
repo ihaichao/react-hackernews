@@ -2,14 +2,10 @@ import React, { Component } from 'react'
 import './NewsItem.styl'
 
 export default class NewsItem extends Component {
-	constructor (props) {
-		super(props)
-		console.log(this.props)
-	}
 	render () {
 		return (
 			<div className="item">
-				<span className="index">1.</span>
+				<span className="index">{this.props.index}.</span>
 				<p>
 					<a className="title" target="_blank" rel="noopener noreferrer">title</a>
 					<span className="domain">

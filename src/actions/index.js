@@ -6,22 +6,21 @@
 
 import { fetchIdsByType, fetchItems } from '../services'
 
-export const RECEIVE_LIST_DATA = 'RECEIVE_LIST_DATA'
+export const RECEIVE_LIST_IDS = 'RECEIVE_LIST_IDS'
 
-export function receiveListData (json) {
+export function receiveListIds (json) {
 	return {
-		type: RECEIVE_LIST_DATA,
+		type: RECEIVE_LIST_IDS,
 		ids: json
 	}
 }
 
 export function fetchListData (type, page) {
 	return dispatch => {
-		console.log(1)
 		return fetchIdsByType(type)
 			.then(ids => {
 				console.log(ids)
-				dispatch(receiveListData(ids))
+				dispatch(receiveListIds(ids))
 			})
 	}
 }
