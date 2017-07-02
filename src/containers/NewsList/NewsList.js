@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchListData } from '../../actions'
+import NewsHeader from '../../components/NewsHeader/NewsHeader'
 import NewsItem from  '../../components/NewsItem/NewsItem'
 import './NewsList.styl'
 
@@ -15,15 +16,17 @@ class NewsList extends Component {
 
 		return (
 			<div className="news-view">
-				{(items && items.length > 0) && items.map(item => <NewsItem index={item.index} title={item.title} url={item.url} score={item.score} by={item.by} time={item.time} descendants={item.descendants} />)}
+				<NewsHeader />
+				{(items && items.length > 0) && items.map((item, index) => 
+					<NewsItem key={item.id} index={index} title={item.title} url={item.url} score={item.score} by={item.by} time={item.time} descendants={item.descendants} />
+				)}
 			</div>
 		)
 	}
 }
 
 export default connect(state => {
-	console.log('state =======>', state)
 	return {
-		items: state.rootReducer.items
+		items: state.items
 	}
 })(NewsList)

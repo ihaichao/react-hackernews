@@ -1,1 +1,1 @@
-# react-hackernews
+# react-redux-hackernews

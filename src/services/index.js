@@ -7,7 +7,7 @@ const config = {
 
 Firebase.initializeApp(config)
 const version = '/v0'
-const api = Firebase.database().ref(version)
+const api = Database().ref(version)
 const itemsCache = Object.create(null)
 // const storiesPerPage = 30
 

@@ -8,11 +8,11 @@ export default class NewsHeader extends Component {
 			<div className="news-header">
 				<div className="logo"></div>
 				<ul className="nav">
-					<li><Link to="/"><a className="title">Hacker News</a></Link></li>
-					<li><Link to="/new"><a className="tab">new</a></Link></li>
-					<li><Link to="/show"><a className="tab">show</a></Link></li>
-					<li><Link to="/ask"><a className="tab">ask</a></Link></li>
-					<li><Link to="/job"><a className="tab">jobs</a></Link></li>
+					<li><Link to="/" className="title">Hacker News</Link></li>
+					<li><Link to="new" className="tab">new</Link></li>
+					<li><Link to="show" className="tab">show</Link></li>
+					<li><Link to="ask" className="tab">ask</Link></li>
+					<li><Link to="job" className="tab">jobs</Link></li>
 				</ul>
 				<span className="project-info">Built by Zhang Zongzheng | <a href="https://github.com/ihaichao/react-hackernews" className="source">Source</a></span>
 			</div>
