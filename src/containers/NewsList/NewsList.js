@@ -7,9 +7,10 @@ import './NewsList.styl'
 
 class NewsList extends Component {
 	componentWillMount () {
-		this.props.dispatch(fetchListData('new'))
+		const type = this.props.location.pathname.replace('/', '')
+		this.props.dispatch(fetchListData(type))
 	}
-
+	
 	render () {
 		// console.log('props =====>', this.props)
 		const { items } = this.props
@@ -18,7 +19,7 @@ class NewsList extends Component {
 			<div className="news-view">
 				<NewsHeader />
 				{(items && items.length > 0) && items.map((item, index) => 
-					<NewsItem key={item.id} index={index} title={item.title} url={item.url} score={item.score} by={item.by} time={item.time} descendants={item.descendants} />
+					<NewsItem key={item.id} index={index + 1} title={item.title} url={item.url} score={item.score} by={item.by} time={item.time} descendants={item.descendants} />
 				)}
 			</div>
 		)
@@ -27,6 +28,6 @@ class NewsList extends Component {
 
 export default connect(state => {
 	return {
-		items: state.items
+		items: state.app.items
 	}
 })(NewsList)

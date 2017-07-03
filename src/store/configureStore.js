@@ -1,19 +1,22 @@
-import { createStore, applyMiddleware, compose } from 'redux'
-// import { routerReducer } from 'react-router-redux'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux'
 import ThunkMiddleware from 'redux-thunk'
-import ReduxLogger from 'redux-logger'
-import rootReducer from '../reducers'
+// import ReduxLogger from 'redux-logger'
+import app from '../reducers'
 
 const finalCreateStore = compose(
-	applyMiddleware(ThunkMiddleware, ReduxLogger)
+	applyMiddleware(ThunkMiddleware)
 )(createStore)
 
-// const reducer = combineReducers({
-// 	rootReducer,
-// 	routing: routerReducer
-// })
+const reducer = combineReducers({
+	app,
+	routing: routerReducer
+})
 
 export default function configureStore() {
-	const store = finalCreateStore(rootReducer)
+	const store = finalCreateStore(
+		reducer,
+		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+	)
 	return store
 }
