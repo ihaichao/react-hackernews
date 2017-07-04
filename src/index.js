@@ -9,7 +9,7 @@ const store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>
-     {routes}
+    {routes}
   </Provider>,
   document.getElementById('root')
 )

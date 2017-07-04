@@ -9,7 +9,6 @@ Firebase.initializeApp(config)
 const version = '/v0'
 const api = Database().ref(version)
 const itemsCache = Object.create(null)
-// const storiesPerPage = 30
 
 /**
  * 根据 id 获得 item

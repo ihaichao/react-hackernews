@@ -1,15 +1,16 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NewsList from '../containers/NewsList/NewsList'
 
 export default (
 	<Router>
 		<Switch>
-			<Route path="/" component={NewsList} />
-			<Route path="/new" component={NewsList} />
-			<Route path="/show" component={NewsList} />
-			<Route path="/ask" component={NewsList} />
-			<Route path="/jobs" component={NewsList} />
+			{/*<Redirect from="/" to="/1" />*/}
+			<Route path="/:page" component={NewsList} />
+			<Route path="/new/:page" component={NewsList} />
+			<Route path="/show/:page" component={NewsList} />
+			<Route path="/ask/:page" component={NewsList} />
+			<Route path="/jobs/:page" component={NewsList} />
 		</Switch>
 	</Router>
 )
