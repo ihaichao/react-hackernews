@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchListData } from '../../actions'
-import NewsHeader from '../../components/NewsHeader/NewsHeader'
+// import NewsHeader from '../../components/NewsHeader/NewsHeader'
 import NewsItem from  '../../components/NewsItem/NewsItem'
 import './NewsList.styl'
 
@@ -52,7 +52,6 @@ class NewsList extends Component {
 
 		return (
 			<div className={isLoading ? 'news-view loading' : 'news-view'}>
-				<NewsHeader />
 				<div className="news-list">
 					{(items && items.length > 0) && items.map((item, index) => 
 						<NewsItem key={item.id} index={(page - 1) * itemsPerPage + index + 1} title={item.title} url={item.url} score={item.score} by={item.by} time={item.time} descendants={item.descendants} />

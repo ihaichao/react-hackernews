@@ -10,7 +10,7 @@ const finalCreateStore = compose(
 
 const reducer = combineReducers({
 	app,
-	routing: routerReducer
+	router: routerReducer
 })
 
 export default function configureStore() {
