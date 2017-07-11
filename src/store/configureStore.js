@@ -1,15 +1,17 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 import ThunkMiddleware from 'redux-thunk'
-// import ReduxLogger from 'redux-logger'
-import app from '../reducers'
+// import CreateLogger from 'redux-logger'
+import news from '../reducers'
+import { loadingBarReducer } from 'react-redux-loading-bar'
 
 const finalCreateStore = compose(
 	applyMiddleware(ThunkMiddleware)
 )(createStore)
 
 const reducer = combineReducers({
-	app,
+	news,
+	loadingBar: loadingBarReducer,
 	router: routerReducer
 })
 

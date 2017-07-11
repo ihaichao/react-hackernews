@@ -34,11 +34,11 @@ export function fetchListData (type, page) {
 }
 
 export function fetchItemsByPage (state, type, page) {
-	const itemsPerPage = state.app.itemsPerPage
+	const itemsPerPage = state.news.itemsPerPage
 	page = page || 1
 	const start = (page - 1) * itemsPerPage
 	const end = page * itemsPerPage
-	const ids = state.app.list[type].slice(start, end)
+	const ids = state.news.list[type].slice(start, end)
 	if (ids.length) {
 		return fetchItems(ids)
 	} else {
