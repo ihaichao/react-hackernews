@@ -1,15 +1,11 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
-import createHistory from 'history/createHashHistory'
-import { ConnectedRouter } from 'react-router-redux'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import NewsHeader from '../components/NewsHeader/NewsHeader'
 import NewsList from '../containers/NewsList/NewsList'
 import LoadingBar from 'react-redux-loading-bar'
 
-const history = createHistory()
-
 export default (
-	<ConnectedRouter history={history}>
+	<HashRouter>
 		<div>
 			<LoadingBar style={{ position: 'fixed', top: 0, left: 0, height: '2px', color: '#f60' }} />
 			<NewsHeader />
@@ -21,5 +17,5 @@ export default (
 				<Route path="/:page?" component={NewsList} />
 			</Switch>
 		</div>
-	</ConnectedRouter>
+	</HashRouter>
 )

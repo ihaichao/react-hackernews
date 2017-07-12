@@ -1,0 +1,23 @@
+.news-view
+  position relative
+  width 100%
+  min-height 100px
+  padding 8px 0 0 5px
+  background-color #f6f6ef
+  .loading
+    text-align center
+    padding-top 30px
+  &.loading:before
+    content "Loading..."
+    position absolute
+    top 30px
+    left 50%
+    transform translateX(-50%)
+  .pagination
+    padding 10px 10px 10px 40px
+    margin-top 10px
+    border-top 2px solid #f60
+    a
+      margin-right 10px
+      &:hover
+        text-decoration underline

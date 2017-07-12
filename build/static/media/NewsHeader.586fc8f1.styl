@@ -1,0 +1,32 @@
+.news-header
+  display flex
+  align-items center
+  padding 2px
+  background-color #ff6600
+
+  .logo
+    width 18px
+    height 18px
+    background-image url('./assets/logo.gif')
+    border 1px solid #fff
+    margin-right 4px
+
+  .nav
+    flex-grow 1
+    .title
+      font-weight bold
+      margin-right 10px
+    .tab
+      &::after
+        content '|'
+        color #000
+        margin 0 3px 0 3px
+      &:last-child
+        &::after
+          content ''
+      &.selected
+        color #fff
+  .project-info
+    color #fff
+    .source
+      color #fff

@@ -54,8 +54,6 @@ class NewsList extends Component {
 		const path = this.getPath(this.props)
 		const hasMore = this.hasMore(this.props)
 
-		console.log(path)
-
 		return (
 			<div className="news-view">
 				{!isLoading && <div className="news-list">
