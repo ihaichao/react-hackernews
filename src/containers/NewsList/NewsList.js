@@ -37,7 +37,7 @@ class NewsList extends Component {
 	}
 
 	getPath (props) {
-		return this.getType(props) === 'top' ? '/' : this.getType(props) + '/'
+		return this.getType(props) === 'top' ? '/' : '/' + this.getType(props) + '/'
 	}
 
 	hasMore () {
@@ -65,7 +65,7 @@ class NewsList extends Component {
 				{items.length > 0 &&
 				<div className="pagination">
 					{page > 1 && <Link to={path + (page - 1)}>&lt; prev</Link>}
-					{hasMore && <Link to={{ pathname: `${path}${page + 1}`,  state: { fromDashboard: true } }}>more...</Link>}
+					{hasMore && <Link to={path + (page + 1)}>more...</Link>}
 				</div>}
 			</div>
 		)

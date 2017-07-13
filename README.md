@@ -1,5 +1,6 @@
 # react-redux-hackernews
 
+[Live demo](https://ihaichao.github.io/react-redux-hackernews)  
 HackerNews clone built with React + Redux + React-Router v4. 
 
 ## Build Setup
